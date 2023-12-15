@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 50px;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-image: url("C360_2017-04-14-10-09-02-376\(1\).jpg");
+            background-repeat: no-repeat;
+            background-size: 95%;
+            
+        }
+        h1 {
+            color: red;
+            
+            
+        }
+        p {
+            color: #f4f413;
+        }
+
+        .love-message {
+            font-size: 20px;
+            color: red;
+        }
+
+        .heart {
+            position: absolute;
+            color: #e74c3c;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+    <title>Aniversário de Casamento</title>
+</head>
+<body>
+    <div id="heart-rain"></div>
+    <h1>Feliz Aniversário de Casamento!</h1>
+    <p class="love-message">Eu te amo mais a cada dia. Obrigado por todos os momentos maravilhosos que passamos juntos.</p>
+    
+    <br><br><br>
+    <br>
+    <br><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Feito com amor</p>
+    <p>Ass. Ruan Araujo</p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const heartContainer = document.getElementById('heart-rain');
+
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+
+                const size = Math.random() * 30 + 10 + 'px';
+                heart.style.fontSize = size;
+
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 2 + 1 + 's';
+
+                heartContainer.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+
+            setInterval(createHeart, 500);
+        });
+    </script>
+    
+</body>
+</html>
